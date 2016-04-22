@@ -3,7 +3,7 @@
   "productName":"Scotch Player",
   "version": "1.0.0",
   "description": "Scotch Demo Player",
-  "main": "server.js",
+  "main": "main.js",
   "scripts": {
     "test": "npm test",
     "start": "electron main.js",
@@ -37,8 +37,5 @@
     "react-dom": "^0.14.7",
     "react-sound": "^0.4.0",
     "soundmanager2": "^2.97.20150601-a"
-  },
-  "browser": {
-    "autocomplete": "./node_modules/devbridge-autocomplete/dist/jquery.autocomplete.js"
   }
 }

@@ -13,6 +13,7 @@ require('electron-reload')(__dirname+'/public');
 let mainWindow;
 
 function createWindow () {
+  //Browser window options
   const browserOptions = {
     width: 500,
     height: 500,

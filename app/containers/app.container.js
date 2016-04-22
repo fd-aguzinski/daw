@@ -50,8 +50,7 @@ class AppContainer extends React.Component {
   }
 
   stop(){
-  //  this.setState({playStatus: Sound.status.STOPPED})
-    this.setState({track: {stream_url: 'https://api.soundcloud.com/tracks/10694842/stream', title: 'Hola Hola', artwork_url: ''},})
+   this.setState({playStatus: Sound.status.STOPPED});
   }
 
   forward(){
