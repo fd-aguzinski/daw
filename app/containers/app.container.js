@@ -23,7 +23,7 @@ class AppContainer extends React.Component {
        elapsed: '00:00',
        total: '00:00',
        position: 0,
-       playFromPosition: 12000,
+       playFromPosition: 0,
        autoCompleteValue: ''
      };
    }
@@ -42,14 +42,18 @@ class AppContainer extends React.Component {
   }
 
   togglePlay(){
+    // Check current playing state
     if(this.state.playStatus === Sound.status.PLAYING){
+      // Pause if playing
       this.setState({playStatus: Sound.status.PAUSED})
     } else {
+      // Resume if paused
       this.setState({playStatus: Sound.status.PLAYING})
     }
   }
 
   stop(){
+    // Stop sound
    this.setState({playStatus: Sound.status.STOPPED});
   }
 
@@ -66,11 +70,13 @@ class AppContainer extends React.Component {
   }
 
   handleChange(event, value){
+    // Update input box
     this.setState({autoCompleteValue: event.target.value});
     let _this = this;
+    //Search for song with entered value
     Axios.get(`https://api.soundcloud.com/tracks?client_id=${this.client_id}&q=${value}`)
       .then(function (response) {
-        console.log(response);
+        // Update track state
         _this.setState({tracks: response.data});
       })
       .catch(function (err) {
@@ -103,14 +109,18 @@ class AppContainer extends React.Component {
 
   randomTrack () {
     let _this = this;
-    //Request for song via Soundcloud using a client id
+    //Request for a playlist via Soundcloud using a client id
     Axios.get(`https://api.soundcloud.com/playlists/209262931?client_id=${this.client_id}`)
       .then(function (response) {
-        var trackLength = response.data.tracks.length;
-        var randomNumber = Math.floor((Math.random() * trackLength) + 1);
+        // Store the length of the tracks
+        const trackLength = response.data.tracks.length;
+        // Pick a random number
+        const randomNumber = Math.floor((Math.random() * trackLength) + 1);
+        //Set the track state with a random track from the playlist
         _this.setState({track: response.data.tracks[randomNumber]});
       })
       .catch(function (err) {
+        //If something goes wrong, let us know
         console.log(err);
       });
    }
