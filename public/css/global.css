@@ -12,18 +12,6 @@ body{
   position: relative;
 }
 
-.search div, .search input {
-  width: 100%;
-}
-
-.search input {
-  border: none;
-  border-bottom: 2px solid rgb(243, 139, 114);
-  outline: none;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 5px;
-}
-
 .details h3{
   text-align: center;
   padding: 50px 10px;
@@ -40,6 +28,21 @@ body{
   display: inline-block;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.search div, .search-container {
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-container input {
+  border: 2px solid rgb(243, 139, 114);
+  border-radius: 2px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  width: 250px;
 }
 
 
@@ -116,6 +119,7 @@ body{
   bottom: 0px;
   width: 100%;
   background: #524C4C;
+  border-top: 2px solid rgb(243, 139, 114);
 }
 
 .footer p{
