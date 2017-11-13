@@ -134,3 +134,8 @@ body{
   height: 25px;
   width: auto;
 }
+
+.menu {
+  width: 100%;
+  background: #524C4C;
+}

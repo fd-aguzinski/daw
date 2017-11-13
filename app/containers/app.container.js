@@ -3,6 +3,7 @@ import Sound from 'react-sound';
 import Axios from 'axios';
 
 import Details from '../components/details.component';
+import MainMenu from '../components/mainMenu.component';
 import Player from '../components/player.component';
 import Progress from '../components/progress.component';
 import Search from '../components/search.component';
@@ -126,7 +127,8 @@ class AppContainer extends React.Component {
 
 		return (
 			<div className="scotch_music" style={styles}>
-				<Search
+				<MainMenu />
+				{/* <Search
 					clientId={this.state.client_id}
 					autoCompleteValue={this.state.autoCompleteValue}
 					tracks={this.state.tracks}
@@ -150,7 +152,7 @@ class AppContainer extends React.Component {
 					random={this.randomTrack.bind(this)}
 				/>
 				<Progress elapsed={this.state.elapsed} total={this.state.total} position={this.state.position} />
-				<Footer />
+				<Footer /> */}
 			</div>
 		);
 	}
